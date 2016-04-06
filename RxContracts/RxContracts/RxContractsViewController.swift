@@ -14,10 +14,21 @@ class RxContractsViewController: UITableViewController {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+         self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+         self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    /**
+     注销按钮
+     */
+    @IBAction func LoginOut(sender: AnyObject) {
+        
+        // -------------
+        
+//        let alert = UIAlertController(title: "提示", message: "确定注销吗", preferredStyle: UIAlertControllerStyleActionSheet)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

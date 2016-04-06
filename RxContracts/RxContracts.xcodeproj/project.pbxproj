@@ -12,7 +12,7 @@
 		DF83380F1CB5535700310296 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DF83380B1CB5535700310296 /* MBProgressHUD.bundle */; };
 		DF8338101CB5535700310296 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83380D1CB5535700310296 /* MBProgressHUD.m */; };
 		DFEE9B901CB5507A0036FF17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE9B8F1CB5507A0036FF17 /* AppDelegate.swift */; };
-		DFEE9B921CB5507A0036FF17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE9B911CB5507A0036FF17 /* ViewController.swift */; };
+		DFEE9B921CB5507A0036FF17 /* RxLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE9B911CB5507A0036FF17 /* RxLoginViewController.swift */; };
 		DFEE9B951CB5507A0036FF17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEE9B931CB5507A0036FF17 /* Main.storyboard */; };
 		DFEE9B971CB5507A0036FF17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFEE9B961CB5507A0036FF17 /* Assets.xcassets */; };
 		DFEE9B9A1CB5507A0036FF17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEE9B981CB5507A0036FF17 /* LaunchScreen.storyboard */; };
@@ -47,7 +47,7 @@
 		DF8338121CB553FB00310296 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		DFEE9B8C1CB5507A0036FF17 /* RxContracts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxContracts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEE9B8F1CB5507A0036FF17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DFEE9B911CB5507A0036FF17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DFEE9B911CB5507A0036FF17 /* RxLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxLoginViewController.swift; sourceTree = "<group>"; };
 		DFEE9B941CB5507A0036FF17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DFEE9B961CB5507A0036FF17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFEE9B991CB5507A0036FF17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 				DF8338081CB5535700310296 /* MBProgressHUD */,
 				DF8338121CB553FB00310296 /* Bridge.h */,
 				DFEE9B8F1CB5507A0036FF17 /* AppDelegate.swift */,
-				DFEE9B911CB5507A0036FF17 /* ViewController.swift */,
+				DFEE9B911CB5507A0036FF17 /* RxLoginViewController.swift */,
 				DF8338061CB5514A00310296 /* RxContractsViewController.swift */,
 				DFEE9B931CB5507A0036FF17 /* Main.storyboard */,
 				DFEE9B961CB5507A0036FF17 /* Assets.xcassets */,
@@ -289,7 +289,7 @@
 				DF8338071CB5514A00310296 /* RxContractsViewController.swift in Sources */,
 				DF83380E1CB5535700310296 /* MBProgressHUD+PKX.m in Sources */,
 				DF8338101CB5535700310296 /* MBProgressHUD.m in Sources */,
-				DFEE9B921CB5507A0036FF17 /* ViewController.swift in Sources */,
+				DFEE9B921CB5507A0036FF17 /* RxLoginViewController.swift in Sources */,
 				DFEE9B901CB5507A0036FF17 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

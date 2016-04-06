@@ -14,7 +14,7 @@ private let RxPassword : String = "123"
 private let RmbSwitch :String = "RmbSwitch"
 private let autoLogin :String = "autoLogin"
 
-class ViewController: UIViewController {
+class RxLoginViewController: UIViewController {
     
     /// 密码文本输入框
     @IBOutlet weak var passwordTextFiled: UITextField!
@@ -121,7 +121,7 @@ class ViewController: UIViewController {
 //    准备跳转的时候调用
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        segue.destinationViewController.title = String(format: "\(sender)的联系人")
+        segue.destinationViewController.title = String(format: "\(sender!)的联系人")
         
     }
     

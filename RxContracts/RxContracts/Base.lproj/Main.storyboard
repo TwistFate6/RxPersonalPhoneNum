@@ -8,7 +8,7 @@
         <!--欢迎使用私人通讯录-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RxContracts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RxLoginViewController" customModule="RxContracts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -192,12 +192,15 @@
                     <navigationItem key="navigationItem" title="通讯录" id="TjF-aQ-Jsb">
                         <barButtonItem key="leftBarButtonItem" title="注销" id="SeF-U9-PPi">
                             <color key="tintColor" red="1" green="0.050165935010000003" blue="0.047037379060000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="LoginOut:" destination="Lb5-df-PQn" id="tpK-Av-pHd"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Pd-Wu-wKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1125" y="436"/>
+            <point key="canvasLocation" x="992.5" y="435.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Cp-dg-H2A">
