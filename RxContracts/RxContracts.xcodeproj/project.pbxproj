@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		DF8338071CB5514A00310296 /* RxContractsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8338061CB5514A00310296 /* RxContractsViewController.swift */; };
+		DF83380E1CB5535700310296 /* MBProgressHUD+PKX.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83380A1CB5535700310296 /* MBProgressHUD+PKX.m */; };
+		DF83380F1CB5535700310296 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DF83380B1CB5535700310296 /* MBProgressHUD.bundle */; };
+		DF8338101CB5535700310296 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83380D1CB5535700310296 /* MBProgressHUD.m */; };
 		DFEE9B901CB5507A0036FF17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE9B8F1CB5507A0036FF17 /* AppDelegate.swift */; };
 		DFEE9B921CB5507A0036FF17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE9B911CB5507A0036FF17 /* ViewController.swift */; };
 		DFEE9B951CB5507A0036FF17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFEE9B931CB5507A0036FF17 /* Main.storyboard */; };
@@ -36,6 +39,12 @@
 
 /* Begin PBXFileReference section */
 		DF8338061CB5514A00310296 /* RxContractsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxContractsViewController.swift; sourceTree = "<group>"; };
+		DF8338091CB5535700310296 /* MBProgressHUD+PKX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+PKX.h"; sourceTree = "<group>"; };
+		DF83380A1CB5535700310296 /* MBProgressHUD+PKX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+PKX.m"; sourceTree = "<group>"; };
+		DF83380B1CB5535700310296 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		DF83380C1CB5535700310296 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		DF83380D1CB5535700310296 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		DF8338121CB553FB00310296 /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		DFEE9B8C1CB5507A0036FF17 /* RxContracts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxContracts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFEE9B8F1CB5507A0036FF17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFEE9B911CB5507A0036FF17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +85,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF8338081CB5535700310296 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				DF8338091CB5535700310296 /* MBProgressHUD+PKX.h */,
+				DF83380A1CB5535700310296 /* MBProgressHUD+PKX.m */,
+				DF83380B1CB5535700310296 /* MBProgressHUD.bundle */,
+				DF83380C1CB5535700310296 /* MBProgressHUD.h */,
+				DF83380D1CB5535700310296 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		DFEE9B831CB5507A0036FF17 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +120,8 @@
 		DFEE9B8E1CB5507A0036FF17 /* RxContracts */ = {
 			isa = PBXGroup;
 			children = (
+				DF8338081CB5535700310296 /* MBProgressHUD */,
+				DF8338121CB553FB00310296 /* Bridge.h */,
 				DFEE9B8F1CB5507A0036FF17 /* AppDelegate.swift */,
 				DFEE9B911CB5507A0036FF17 /* ViewController.swift */,
 				DF8338061CB5514A00310296 /* RxContractsViewController.swift */,
@@ -236,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFEE9B9A1CB5507A0036FF17 /* LaunchScreen.storyboard in Resources */,
+				DF83380F1CB5535700310296 /* MBProgressHUD.bundle in Resources */,
 				DFEE9B971CB5507A0036FF17 /* Assets.xcassets in Resources */,
 				DFEE9B951CB5507A0036FF17 /* Main.storyboard in Resources */,
 			);
@@ -263,6 +287,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF8338071CB5514A00310296 /* RxContractsViewController.swift in Sources */,
+				DF83380E1CB5535700310296 /* MBProgressHUD+PKX.m in Sources */,
+				DF8338101CB5535700310296 /* MBProgressHUD.m in Sources */,
 				DFEE9B921CB5507A0036FF17 /* ViewController.swift in Sources */,
 				DFEE9B901CB5507A0036FF17 /* AppDelegate.swift in Sources */,
 			);
@@ -411,6 +437,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rxl.www.RxContracts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/rxl/Documents/PocketContracts/RxPersonalPhoneNum/RxContracts/RxContracts/Bridge.h;
 			};
 			name = Debug;
 		};
@@ -423,6 +450,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rxl.www.RxContracts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/rxl/Documents/PocketContracts/RxPersonalPhoneNum/RxContracts/RxContracts/Bridge.h;
 			};
 			name = Release;
 		};
