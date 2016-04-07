@@ -79,6 +79,14 @@ class RxContractsViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
+    
+    @IBAction func addContract(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("addContract", sender: nil)
+        
+    }
+    
  
     
 

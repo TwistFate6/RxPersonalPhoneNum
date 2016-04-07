@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF2AA05C1CB69BF000937A9A /* RxAddContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2AA05B1CB69BF000937A9A /* RxAddContract.swift */; };
 		DF4E478D1CB63BA4006D425B /* RxContractCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E478B1CB63BA4006D425B /* RxContractCell.swift */; };
 		DF4E47901CB63F04006D425B /* RxContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E478F1CB63F04006D425B /* RxContracts.swift */; };
 		DF8338071CB5514A00310296 /* RxContractsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8338061CB5514A00310296 /* RxContractsViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF2AA05B1CB69BF000937A9A /* RxAddContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxAddContract.swift; sourceTree = "<group>"; };
 		DF4E478B1CB63BA4006D425B /* RxContractCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxContractCell.swift; sourceTree = "<group>"; };
 		DF4E478F1CB63F04006D425B /* RxContracts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxContracts.swift; sourceTree = "<group>"; };
 		DF8338061CB5514A00310296 /* RxContractsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxContractsViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				DFEE9B911CB5507A0036FF17 /* RxLoginViewController.swift */,
 				DF8338061CB5514A00310296 /* RxContractsViewController.swift */,
 				DF8F9F171CB60A15008D4635 /* RxRegisterViewController.swift */,
+				DF2AA05B1CB69BF000937A9A /* RxAddContract.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				DF8338071CB5514A00310296 /* RxContractsViewController.swift in Sources */,
 				DF4E478D1CB63BA4006D425B /* RxContractCell.swift in Sources */,
 				DF83380E1CB5535700310296 /* MBProgressHUD+PKX.m in Sources */,
+				DF2AA05C1CB69BF000937A9A /* RxAddContract.swift in Sources */,
 				DF8338101CB5535700310296 /* MBProgressHUD.m in Sources */,
 				DFEE9B921CB5507A0036FF17 /* RxLoginViewController.swift in Sources */,
 				DFEE9B901CB5507A0036FF17 /* AppDelegate.swift in Sources */,
