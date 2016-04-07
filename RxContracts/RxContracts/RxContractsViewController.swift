@@ -13,6 +13,7 @@ class RxContractsViewController: UITableViewController {
     
     lazy var Contracts:[RxContracts] = []
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

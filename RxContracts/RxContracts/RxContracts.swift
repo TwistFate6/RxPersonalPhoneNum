@@ -10,8 +10,11 @@ import UIKit
 
 class RxContracts: NSObject {
 
+//    姓名
     var name: String?
+//    电话号码
     var phone: String?
+//    头像
     var faceImage: String?
     
     
