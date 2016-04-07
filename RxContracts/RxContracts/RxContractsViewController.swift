@@ -13,11 +13,15 @@ class RxContractsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-         self.clearsSelectionOnViewWillAppear = false
+//        UIImageView *backImageView=[[UIImageViewalloc]initWithFrame:self.view.bounds];
+//        [backImageView setImage:[UIImageimageNamed:@"liaotianbeijing"]];
+//        self.tableView.backgroundView=backImageView;
+        
+        let bgView = UIImageView(frame: view.bounds)
+        bgView.image = UIImage(named: "bg1")
+        
+        tableView.backgroundView = bgView
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     /**
      注销按钮
@@ -44,29 +48,30 @@ class RxContractsViewController: UITableViewController {
         self .presentViewController(alert, animated: true, completion: nil)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 5
     }
 
-    // Mark 和OC中的delloc方法一致
-    
-    deinit {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        print("联系人控制器delloc")
+        let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "cell")
+        
+        cell.backgroundColor = UIColor.clearColor()
+        
+        cell.textLabel?.text = "caafa"
+        cell.detailTextLabel?.text = "3235235"
+        cell.selectionStyle = .Blue
+        
+        return cell
+        
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+ 
     
 
 }

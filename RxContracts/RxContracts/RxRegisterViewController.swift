@@ -21,5 +21,18 @@ class RxRegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    
+//    取消按钮点击
+    @IBAction func cacel() {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+//    确定按钮点击
+    @IBAction func confirm() {
+        
+        
+        
+    }
 }

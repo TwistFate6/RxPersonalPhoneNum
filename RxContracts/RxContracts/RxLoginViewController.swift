@@ -67,7 +67,7 @@ class RxLoginViewController: UIViewController {
                 MBProgressHUD .showMessage("正在登录")
                 
                 //            模仿延时登录
-                let time: NSTimeInterval = 2.0
+                let time: NSTimeInterval = 1
                 let delay = dispatch_time(DISPATCH_TIME_NOW,
                                           Int64(time * Double(NSEC_PER_SEC)))
                 dispatch_after(delay, dispatch_get_main_queue()) {
@@ -109,7 +109,7 @@ class RxLoginViewController: UIViewController {
         let defalut = NSUserDefaults.standardUserDefaults()
         
         accountTextFiled.text = defalut.objectForKey(RxAccount) as? String
-        passwordTextFiled.text = defalut.objectForKey(RxPassword) as? String
+//        passwordTextFiled.text = defalut.objectForKey(RxPassword) as? String
         rmbPasswordSwitch.on = defalut.boolForKey(RmbSwitch)
         autoLoginSwitch.on = defalut.boolForKey(autoLogin)
         

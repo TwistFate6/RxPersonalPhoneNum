@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF4E478D1CB63BA4006D425B /* RxContractCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E478B1CB63BA4006D425B /* RxContractCell.swift */; };
+		DF4E47901CB63F04006D425B /* RxContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E478F1CB63F04006D425B /* RxContracts.swift */; };
 		DF8338071CB5514A00310296 /* RxContractsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8338061CB5514A00310296 /* RxContractsViewController.swift */; };
 		DF83380E1CB5535700310296 /* MBProgressHUD+PKX.m in Sources */ = {isa = PBXBuildFile; fileRef = DF83380A1CB5535700310296 /* MBProgressHUD+PKX.m */; };
 		DF83380F1CB5535700310296 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DF83380B1CB5535700310296 /* MBProgressHUD.bundle */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF4E478B1CB63BA4006D425B /* RxContractCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxContractCell.swift; sourceTree = "<group>"; };
+		DF4E478F1CB63F04006D425B /* RxContracts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxContracts.swift; sourceTree = "<group>"; };
 		DF8338061CB5514A00310296 /* RxContractsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxContractsViewController.swift; sourceTree = "<group>"; };
 		DF8338091CB5535700310296 /* MBProgressHUD+PKX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+PKX.h"; sourceTree = "<group>"; };
 		DF83380A1CB5535700310296 /* MBProgressHUD+PKX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+PKX.m"; sourceTree = "<group>"; };
@@ -87,6 +91,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF4E47861CB63B01006D425B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF4E478F1CB63F04006D425B /* RxContracts.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DF4E47871CB63B0A006D425B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DFEE9B8F1CB5507A0036FF17 /* AppDelegate.swift */,
+				DFEE9B931CB5507A0036FF17 /* Main.storyboard */,
+				DF4E478B1CB63BA4006D425B /* RxContractCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		DF4E47881CB63B10006D425B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DFEE9B911CB5507A0036FF17 /* RxLoginViewController.swift */,
+				DF8338061CB5514A00310296 /* RxContractsViewController.swift */,
+				DF8F9F171CB60A15008D4635 /* RxRegisterViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		DF4E47891CB63B27006D425B /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				DF8338121CB553FB00310296 /* Bridge.h */,
+				DF8338081CB5535700310296 /* MBProgressHUD */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		DF4E478A1CB63B35006D425B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				DFEE9B961CB5507A0036FF17 /* Assets.xcassets */,
+				DFEE9B981CB5507A0036FF17 /* LaunchScreen.storyboard */,
+				DFEE9B9B1CB5507A0036FF17 /* Info.plist */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		DF8338081CB5535700310296 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,16 +173,11 @@
 		DFEE9B8E1CB5507A0036FF17 /* RxContracts */ = {
 			isa = PBXGroup;
 			children = (
-				DF8338081CB5535700310296 /* MBProgressHUD */,
-				DF8338121CB553FB00310296 /* Bridge.h */,
-				DFEE9B8F1CB5507A0036FF17 /* AppDelegate.swift */,
-				DFEE9B911CB5507A0036FF17 /* RxLoginViewController.swift */,
-				DF8338061CB5514A00310296 /* RxContractsViewController.swift */,
-				DF8F9F171CB60A15008D4635 /* RxRegisterViewController.swift */,
-				DFEE9B931CB5507A0036FF17 /* Main.storyboard */,
-				DFEE9B961CB5507A0036FF17 /* Assets.xcassets */,
-				DFEE9B981CB5507A0036FF17 /* LaunchScreen.storyboard */,
-				DFEE9B9B1CB5507A0036FF17 /* Info.plist */,
+				DF4E478A1CB63B35006D425B /* Other */,
+				DF4E47891CB63B27006D425B /* Tool */,
+				DF4E47881CB63B10006D425B /* Controller */,
+				DF4E47871CB63B0A006D425B /* View */,
+				DF4E47861CB63B01006D425B /* Model */,
 			);
 			path = RxContracts;
 			sourceTree = "<group>";
@@ -290,11 +336,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF8338071CB5514A00310296 /* RxContractsViewController.swift in Sources */,
+				DF4E478D1CB63BA4006D425B /* RxContractCell.swift in Sources */,
 				DF83380E1CB5535700310296 /* MBProgressHUD+PKX.m in Sources */,
 				DF8338101CB5535700310296 /* MBProgressHUD.m in Sources */,
 				DFEE9B921CB5507A0036FF17 /* RxLoginViewController.swift in Sources */,
 				DFEE9B901CB5507A0036FF17 /* AppDelegate.swift in Sources */,
 				DF8F9F181CB60A15008D4635 /* RxRegisterViewController.swift in Sources */,
+				DF4E47901CB63F04006D425B /* RxContracts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
