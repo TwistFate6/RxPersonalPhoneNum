@@ -128,16 +128,39 @@ class RxLoginViewController: UIViewController {
         
     }
     
+    @IBAction func registerBtnClick() {
+        
+        self.performSegueWithIdentifier("register", sender: nil)
+        
+    }
+    
+    
+    
     
 //    准备跳转的时候调用
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        segue.destinationViewController.title = String(format: "\(sender!)的联系人")
+        if segue.destinationViewController.self == RxContractsViewController.self() {
+           
+            segue.destinationViewController.title = String(format: "\(sender!)的联系人")
+        }else{
+            
+            
+            
+        }
+  
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         loadUserInfo()
  
