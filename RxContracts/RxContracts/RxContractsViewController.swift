@@ -9,20 +9,28 @@
 import UIKit
 
 class RxContractsViewController: UITableViewController {
+    
+    
+    lazy var Contracts:[RxContracts] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        UIImageView *backImageView=[[UIImageViewalloc]initWithFrame:self.view.bounds];
-//        [backImageView setImage:[UIImageimageNamed:@"liaotianbeijing"]];
-//        self.tableView.backgroundView=backImageView;
-        
         let bgView = UIImageView(frame: view.bounds)
         bgView.image = UIImage(named: "bg1")
         
         tableView.backgroundView = bgView
-
+        tableView.separatorStyle = .None
+        
+        let reloadClousure = {
+            (contractArr:[RxContracts]) in
+            self.Contracts += contractArr
+            self.tableView.reloadData()
+        }
+        
+        RxContracts.prepareData(reloadClousure)
     }
+    
     /**
      注销按钮
      */
@@ -51,17 +59,17 @@ class RxContractsViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return Contracts.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "cell")
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! RxContractCell
+        let contract = Contracts[indexPath.row]
+        
+        cell.contracts = contract
         
         cell.backgroundColor = UIColor.clearColor()
-        
-        cell.textLabel?.text = "caafa"
-        cell.detailTextLabel?.text = "3235235"
         cell.selectionStyle = .Blue
         
         return cell
