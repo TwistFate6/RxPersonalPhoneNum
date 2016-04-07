@@ -46,7 +46,7 @@ class RxLoginViewController: UIViewController {
      
         //    当自动登录按钮打开,记住密码开关打开
         if (self.autoLoginSwitch.on) {
-
+            
             self.rmbPasswordSwitch.setOn(true, animated: true)
         }
         
@@ -78,9 +78,11 @@ class RxLoginViewController: UIViewController {
                     
                     self.performSegueWithIdentifier("Login", sender: self.accountTextFiled.text)
                     
-                    self.saveUserInfo()
+                   
         }
             }
+            
+             self.saveUserInfo()
  
         }else{
             
@@ -96,7 +98,9 @@ class RxLoginViewController: UIViewController {
         defalut.setObject(accountTextFiled.text, forKey: RxAccount)
         defalut.setObject(passwordTextFiled.text, forKey: RxPassword)
         defalut.setBool(rmbPasswordSwitch.on, forKey: RmbSwitch)
-        defalut.setBool(rmbPasswordSwitch.on, forKey: autoLogin)
+        defalut.setBool(autoLoginSwitch.on, forKey: autoLogin)
+        
+        defalut.synchronize()
         
     }
     
@@ -108,6 +112,13 @@ class RxLoginViewController: UIViewController {
         passwordTextFiled.text = defalut.objectForKey(RxPassword) as? String
         rmbPasswordSwitch.on = defalut.boolForKey(RmbSwitch)
         autoLoginSwitch.on = defalut.boolForKey(autoLogin)
+        
+        //    判断是否记住密码
+        if (self.rmbPasswordSwitch.on) {
+            //        密码框赋值
+            self.passwordTextFiled.text=defalut.valueForKey(RxPassword)
+             as? String
+        }
         
         if autoLoginSwitch.on {
             

@@ -24,11 +24,24 @@ class RxContractsViewController: UITableViewController {
      */
     @IBAction func LoginOut(sender: AnyObject) {
         
-        // -------------
+        // Mark : 弹窗
         
-//        let alert = UIAlertController(title: "提示", message: "确定注销吗", preferredStyle: UIAlertControllerStyleActionSheet)
+        let alert = UIAlertController(title: "提示", message: "确定注销吗", preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         
+        let confirm = UIAlertAction(title: "确定", style: UIAlertActionStyle.Destructive) { (UIAlertAction) in
+            
+            self.navigationController!.popViewControllerAnimated(true)
+        }
+        
+        let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+        
+        
+        alert.addAction(confirm)
+        alert.addAction(cancel)
+        
+        
+        self .presentViewController(alert, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +61,13 @@ class RxContractsViewController: UITableViewController {
         return 0
     }
 
+    // Mark 和OC中的delloc方法一致
+    
+    deinit {
+        
+        print("联系人控制器delloc")
+    }
+    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
