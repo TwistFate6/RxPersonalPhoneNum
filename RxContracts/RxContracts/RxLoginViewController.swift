@@ -132,6 +132,7 @@ class RxLoginViewController: UIViewController {
         
         self.performSegueWithIdentifier("register", sender: nil)
         
+        
     }
     
     
@@ -140,28 +141,18 @@ class RxLoginViewController: UIViewController {
 //    准备跳转的时候调用
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.destinationViewController.self == RxContractsViewController.self() {
+        if segue.destinationViewController.isKindOfClass(RxContractsViewController) {
            
             segue.destinationViewController.title = String(format: "\(sender!)的联系人")
-        }else{
-            
-            
-            
         }
   
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        
-        
-        
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+//        加载数据
         loadUserInfo()
  
     }

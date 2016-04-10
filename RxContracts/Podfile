@@ -1,17 +1,9 @@
 # Uncomment this line to define a global platform for your project
-# platform :ios, '8.0'
 # Uncomment this line if you're using Swift
-# use_frameworks!
 
-target 'RxContracts' do
-
-end
-
-target 'RxContractsTests' do
-
-end
-
-target 'RxContractsUITests' do
-
-end
-
+use_frameworks!		# 使用动态库, swift只支持动态库
+platform :ios, '8.0'
+pod 'AFNetworking'
+pod 'SDWebImage'
+pod 'SVProgressHUD'
+pod 'SnapKit', '0.19.1'  # 0.19.1 -> 适合swift2.1

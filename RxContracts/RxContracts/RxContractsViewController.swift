@@ -8,11 +8,25 @@
 
 import UIKit
 
+var test = NSMutableArray()
+
+
 class RxContractsViewController: UITableViewController {
     
+    lazy var Contracts : NSMutableArray = {
+        
+        var Contracts = NSKeyedUnarchiver.unarchiveObjectWithFile(DataPath) as? NSMutableArray
+        
+        if Contracts == nil {
+            Contracts = NSMutableArray()
+        }
+        
+        return Contracts!
+    }()
     
-    lazy var Contracts:[RxContracts] = []
 
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +37,8 @@ class RxContractsViewController: UITableViewController {
         tableView.backgroundView = bgView
         tableView.separatorStyle = .None
         
-        let reloadClousure = {
-            (contractArr:[RxContracts]) in
-            self.Contracts += contractArr
-            self.tableView.reloadData()
-        }
         
-        RxContracts.prepareData(reloadClousure)
+
     }
     
     /**
@@ -68,7 +77,7 @@ class RxContractsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! RxContractCell
         let contract = Contracts[indexPath.row]
         
-        cell.contracts = contract
+        cell.contracts = contract as? RxContracts
         
         cell.backgroundColor = UIColor.clearColor()
         cell.selectionStyle = .Blue
@@ -76,9 +85,31 @@ class RxContractsViewController: UITableViewController {
         return cell
         
     }
+//    MARK : - 实现cell的删除
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+//        将对应的模型从数组中删除
+        Contracts.removeObjectAtIndex(indexPath.row)
+//        删除指定行
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//        将数组重新写入本地
+        NSKeyedArchiver.archiveRootObject(Contracts, toFile: DataPath)
+    }
     
+//    MARK : - 修改删除按钮的名称
+    override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
+        return "删除"
+    }
+    
+    
+//    cell的点击
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        
+        
+        self.performSegueWithIdentifier("callPhone", sender: nil)
+
+        
     }
     
     
@@ -88,7 +119,31 @@ class RxContractsViewController: UITableViewController {
         
     }
     
- 
+// 准备跳转的时候进行调用
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        目标控制器
+        let destVC = segue.destinationViewController
+        
+        
+//        进行判断跳转的是哪一个控制器
+        if destVC.isKindOfClass(RxAddContract) {
+            
+            let addVC = destVC as! RxAddContract
+            
+            addVC.addContractModel = {
+                
+            (contract: RxContracts)  in
+                
+                self.Contracts.addObject(contract)
+//                将数组保存到本地
+                NSKeyedArchiver.archiveRootObject(self.Contracts, toFile: DataPath)
+                
+                self.tableView.reloadData()
+            
+            }
+        }
+    }
     
 
 }
+

@@ -18,10 +18,13 @@ class RxContractCell: UITableViewCell {
     @IBOutlet weak var phoneNumLabel: UILabel!
     
     var contracts: RxContracts? {
+        
         didSet {
-           nameLabel?.text = contracts?.name
-           phoneNumLabel?.text = contracts?.phone
-           faceImage?.image = UIImage(named: (contracts?.faceImage)!)
+            
+           nameLabel?.text = contracts!.name
+           phoneNumLabel?.text = contracts!.phone
+           faceImage?.image = UIImage(named: (contracts!.faceImage)!)
+            
         }
     }
 //    

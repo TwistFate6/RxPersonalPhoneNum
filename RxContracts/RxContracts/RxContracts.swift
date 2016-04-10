@@ -17,34 +17,61 @@ class RxContracts: NSObject {
 //    头像
     var faceImage: String?
     
+//    /**
+//     *  归档
+//     */
+//    - (void)encodeWithCoder:(NSCoder *)aCoder{
+//    
+//    [aCoder encodeObject:self.name forKey:@"name"];
+//    [aCoder encodeObject:self.phoneNum forKey:@"phoneNum"];
+//    }
     
-    init(dict:[String:String]) {
+    override init() {
         super.init()
-        setValuesForKeysWithDictionary(dict)
-}
-    //这个地方必须调用 super
-    override func setValue(value: AnyObject?, forKey key: String) {
-        super.setValue(value, forKey: key)
+    }
+    init(coder aDecoder: NSCoder!)
+    {
+        super.init()
+        self.name=aDecoder.decodeObjectForKey("name") as? String
+        self.phone=aDecoder.decodeObjectForKey("phone") as? String
+        self.faceImage = aDecoder.decodeObjectForKey("faceImage") as? String
     }
     
-    //这个地方不能调用 super
-    override func setValue(value: AnyObject?, forUndefinedKey key: String) {
-        //做异常处理
+    
+    func encodeWithCoder(aCoder: NSCoder!) {
+        
+        aCoder.encodeObject(self.name, forKey: "name")
+        aCoder.encodeObject(self.phone, forKey: "phone")
+        aCoder.encodeObject(self.faceImage, forKey: "faceImage")
     }
-    class func prepareData (callback: ([RxContracts]) -> ()) {
-        dispatch_async(dispatch_get_global_queue(0, 0)) { () -> Void in
-            let array1:[[String: String]] = [["name":"xiaowang", "phone":"1234567","faceImage":"G001"],["name":"xiaowang", "phone":"1234567","faceImage":"G002"]]
-            
-            var personArray:[RxContracts] = []
-            
-            for item in array1 {
-                let person = RxContracts(dict: item)
-                personArray.append(person)
-            }
-            
-            dispatch_sync(dispatch_get_main_queue(), { () -> Void in
-                callback(personArray)
-            })
-        }
-    }
+    
+    
+    
+    
+//      func encodeWithCoder(aCoder: NSCoder!) {
+//        aCoder.encodeInteger(self.age, forKey: "age")
+//        aCoder.encodeObject(self.name, forKey: "name")
+//    }
+//    class func save(user:User)->Bool{
+//        return NSKeyedArchiver.archiveRootObject(user, toFile: path)
+//    }
+//     
+//    class func user()->User?{
+//      return  NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? User
+//    }
+    
+//    /**
+//     *  解档
+//     */
+//    - (nullable instancetype)initWithCoder:(NSCoder *)aDecoder{
+//    if (self=[super init]) {
+//    
+//    self.name=[aDecoder decodeObjectForKey:@"name"];
+//    self.phoneNum=[aDecoder decodeObjectForKey:@"phoneNum"];
+//    }
+//    
+//    
+//    return self;
+//    }
+    
 }

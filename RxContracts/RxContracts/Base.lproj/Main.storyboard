@@ -196,7 +196,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TUd-yc-EYQ" id="Wj4-M7-Vah">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yhq-MF-KAf" userLabel="头像">
@@ -247,8 +247,8 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="Lb5-df-PQn" id="PqG-Iw-LV9"/>
-                            <outlet property="delegate" destination="Lb5-df-PQn" id="YV3-hW-7Be"/>
+                            <outlet property="dataSource" destination="Lb5-df-PQn" id="tBh-YH-k9e"/>
+                            <outlet property="delegate" destination="Lb5-df-PQn" id="vmW-vn-vx8"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="通讯录" id="TjF-aQ-Jsb">
@@ -266,11 +266,105 @@
                     </navigationItem>
                     <connections>
                         <segue destination="fix-zW-zEN" kind="show" identifier="addContract" id="Hgm-Bc-KgL"/>
+                        <segue destination="0EX-z6-6GF" kind="show" identifier="callPhone" id="IoI-UL-8KL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Pd-Wu-wKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1018.5" y="119.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tL3-J8-O8o">
+            <objects>
+                <viewController id="0EX-z6-6GF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JN3-cZ-nmi"/>
+                        <viewControllerLayoutGuide type="bottom" id="NcL-HL-9Hg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iVm-GQ-hTe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg3" translatesAutoresizingMaskIntoConstraints="NO" id="s4n-75-ul3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRE-DZ-XGJ">
+                                <rect key="frame" x="0.0" y="144" width="375" height="200"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入姓名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d5J-Z8-wEN">
+                                        <rect key="frame" x="79" y="35" width="276" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucQ-LW-eIr">
+                                        <rect key="frame" x="10" y="39" width="49" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.18929661" green="0.2196490358" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="23z-dr-dCs">
+                                        <rect key="frame" x="79" y="85" width="276" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电话" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMA-s9-7B9">
+                                        <rect key="frame" x="10" y="89" width="49" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.18929661" green="0.2196490358" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入电话号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ntm-be-nnU">
+                                        <rect key="frame" x="79" y="85" width="276" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ucQ-LW-eIr" firstAttribute="centerY" secondItem="d5J-Z8-wEN" secondAttribute="centerY" id="2Ld-nj-vE5"/>
+                                    <constraint firstAttribute="trailing" secondItem="d5J-Z8-wEN" secondAttribute="trailing" constant="20" id="Eja-LH-uA5"/>
+                                    <constraint firstAttribute="height" constant="200" id="JwI-Ya-QDC"/>
+                                    <constraint firstItem="IMA-s9-7B9" firstAttribute="centerY" secondItem="23z-dr-dCs" secondAttribute="centerY" id="OG8-QP-nX8"/>
+                                    <constraint firstItem="d5J-Z8-wEN" firstAttribute="centerX" secondItem="wRE-DZ-XGJ" secondAttribute="centerX" constant="29.5" id="QrF-LU-rDF"/>
+                                    <constraint firstItem="Ntm-be-nnU" firstAttribute="leading" secondItem="d5J-Z8-wEN" secondAttribute="leading" id="ZJz-kj-p40"/>
+                                    <constraint firstItem="ucQ-LW-eIr" firstAttribute="leading" secondItem="wRE-DZ-XGJ" secondAttribute="leading" constant="10" id="ZeS-4i-TWR"/>
+                                    <constraint firstItem="Ntm-be-nnU" firstAttribute="trailing" secondItem="d5J-Z8-wEN" secondAttribute="trailing" id="c4r-c5-3tu"/>
+                                    <constraint firstItem="23z-dr-dCs" firstAttribute="baseline" secondItem="Ntm-be-nnU" secondAttribute="baseline" id="cUi-Ii-c5t"/>
+                                    <constraint firstItem="IMA-s9-7B9" firstAttribute="leading" secondItem="ucQ-LW-eIr" secondAttribute="leading" id="dgF-47-dvv"/>
+                                    <constraint firstItem="d5J-Z8-wEN" firstAttribute="leading" secondItem="ucQ-LW-eIr" secondAttribute="trailing" constant="20" id="glR-9v-VZs"/>
+                                    <constraint firstItem="23z-dr-dCs" firstAttribute="leading" secondItem="IMA-s9-7B9" secondAttribute="trailing" constant="20" id="jOD-4d-gdJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="d5J-Z8-wEN" secondAttribute="trailing" constant="20" id="mHS-d3-hrt"/>
+                                    <constraint firstItem="d5J-Z8-wEN" firstAttribute="top" secondItem="wRE-DZ-XGJ" secondAttribute="top" constant="35" id="plR-59-gye"/>
+                                    <constraint firstItem="Ntm-be-nnU" firstAttribute="top" secondItem="d5J-Z8-wEN" secondAttribute="bottom" constant="20" id="rYG-Ox-Mts"/>
+                                    <constraint firstItem="23z-dr-dCs" firstAttribute="leading" secondItem="Ntm-be-nnU" secondAttribute="leading" id="slh-0i-cwZ"/>
+                                    <constraint firstItem="d5J-Z8-wEN" firstAttribute="top" secondItem="wRE-DZ-XGJ" secondAttribute="top" constant="33" id="tP8-0Z-QQn"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="uWO-zC-Cx4"/>
+                                    <constraint firstItem="23z-dr-dCs" firstAttribute="trailing" secondItem="Ntm-be-nnU" secondAttribute="trailing" id="xz5-sA-t1N"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="uWO-zC-Cx4"/>
+                                        <exclude reference="tP8-0Z-QQn"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="s4n-75-ul3" firstAttribute="top" secondItem="JN3-cZ-nmi" secondAttribute="bottom" constant="-64" id="CAR-hd-SC2"/>
+                            <constraint firstItem="s4n-75-ul3" firstAttribute="leading" secondItem="iVm-GQ-hTe" secondAttribute="leading" id="aw5-n2-GX2"/>
+                            <constraint firstItem="wRE-DZ-XGJ" firstAttribute="top" secondItem="JN3-cZ-nmi" secondAttribute="bottom" constant="80" id="fm7-MD-M2D"/>
+                            <constraint firstItem="NcL-HL-9Hg" firstAttribute="top" secondItem="s4n-75-ul3" secondAttribute="bottom" id="kpf-6B-KPM"/>
+                            <constraint firstAttribute="trailing" secondItem="s4n-75-ul3" secondAttribute="trailing" id="pbD-B1-Tff"/>
+                            <constraint firstItem="wRE-DZ-XGJ" firstAttribute="leading" secondItem="iVm-GQ-hTe" secondAttribute="leading" id="vOd-n7-vnU"/>
+                            <constraint firstAttribute="trailing" secondItem="wRE-DZ-XGJ" secondAttribute="trailing" id="zvn-0v-HI1"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CNx-wh-cJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1578.5" y="331.5"/>
         </scene>
         <!--添加联系人-->
         <scene sceneID="Vb6-RE-FLU">
@@ -315,7 +409,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入电话号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PGO-gU-9sa">
                                         <rect key="frame" x="79" y="85" width="236" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15a-Al-ZgG">
                                         <rect key="frame" x="20" y="135" width="295" height="30"/>
@@ -324,6 +418,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="295" height="30"/>
                                                 <color key="backgroundColor" red="0.99125043467343221" green="1" blue="0.44966418697847421" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="保存"/>
+                                                <connections>
+                                                    <action selector="saveContract" destination="fix-zW-zEN" eventType="touchUpInside" id="pzI-n5-7d1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -380,6 +477,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="添加联系人" id="m20-09-QR9"/>
+                    <connections>
+                        <outlet property="nameTextFiled" destination="Hgt-qD-gjx" id="0nx-fp-fr6"/>
+                        <outlet property="phoneNumTextFiled" destination="PGO-gU-9sa" id="hq6-vN-02j"/>
+                        <outlet property="saveBtn" destination="oKj-rJ-3Yb" id="dx0-RK-xn5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ny-z5-V12" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
